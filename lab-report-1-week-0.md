@@ -1,1 +1,1 @@
-![Image](http://url/lab-report-screenshot.png)
+![](http://url/lab-report-screenshot.png)
