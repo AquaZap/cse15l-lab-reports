@@ -1,1 +1,1 @@
-![](lab-report-screenshot.png)
+![]( https://aquazap.github.io/cse15l-lab-reports/lab-report-screenshot.png)
