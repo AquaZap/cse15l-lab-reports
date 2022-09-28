@@ -1,1 +1,1 @@
-![](http://commonmark.org/lab-report-screenshot.png)
+![Image](lab-report-screenshot.png)
