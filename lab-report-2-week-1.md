@@ -13,8 +13,9 @@ Before we start connecting, if you're on windows install OpenSSH using this [Lin
 
 *Note that you may this installed so check by going to Settings -> Apps -> Optional Features then searching for OpenSSH in the search bar.
 
-
 Now that you have OpenSSH installed, go into the new VSCode terminal you opened and type in the following command:
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-2-screenshot-1.png)
 
 The "zz" is most likely a different pair of letters for you so make sure you look up what it is [here.](https://sdacs.ucsd.edu/~icc/index.php)
 
@@ -29,6 +30,15 @@ Above is a list of commands you can try within this terminal. Try them out! Once
 
 Now let's try moving files with the command SCP!
 
+First, create a new java file called WhereAmI.java and use the following code within it:
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-2-screenshot-3.png)
+
+Compile and run this program within your computer's terminal to confirm it works. Now use the following scp command
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-2-screenshot-4.png)
+
+You'll be prompted to enter in your password. Once you do, the WhereAmI program should be copied into the remote terminal. Test this by entering it with the ssh command then compiling and running the WhereAmI.java file. Before moving onto the next step, logout of the terminal.
 
 Let's try setting SSH Key!
 
