@@ -13,6 +13,7 @@ Before we start connecting, if you're on windows install OpenSSH using this [Lin
 
 *Note that you may this installed so check by going to Settings -> Apps -> Optional Features then searching for OpenSSH in the search bar.
 
+
 Now that you have OpenSSH installed, go into the new VSCode terminal you opened and type in the following command:
 
 The "zz" is most likely a different pair of letters for you so make sure you look up what it is [here.](https://sdacs.ucsd.edu/~icc/index.php)
@@ -25,8 +26,11 @@ Now that you're remotely connected, let's try out some commands!
 
 Above is a list of commands you can try within this terminal. Try them out! Once you're done, hit ctrl + D or type exit into the terminal in order to log out.
 
+
 Now let's try moving files with the command SCP!
 
+
 Let's try setting SSH Key!
+
 
 Now, let's optimize our remote connection!
