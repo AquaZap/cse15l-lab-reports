@@ -28,6 +28,8 @@ Commands such as cd and cd ~ should still work on this new terminal. Try out the
 
 ![](https://aquazap.github.io/cse15l-lab-reports/lab-report-2-week-1-screenshot-2.png)
 
+This should print out a list of files that are contained within the remote server and when they were created within the server. Typing just ls only returns the list of files.
+
 Once you're done, hit ctrl + D or type exit into the terminal in order to log out.
 
 
