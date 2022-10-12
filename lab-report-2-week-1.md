@@ -24,7 +24,7 @@ Whenever you're prompted with (yes/no/[fingerprint]) type in yes in order to mov
 
 Now that you're remotely connected, let's try out some commands!
 
-Commands such as cd and cd ~ should still work on this new terminal. Try out the following command and go through what it prints out.
+Commands such as cd and cd ~ which is used to change your current directory should still work on this new terminal. Try out the following command and go through what it prints out.
 
 ![](https://aquazap.github.io/cse15l-lab-reports/lab-report-2-week-1-screenshot-2.png)
 
