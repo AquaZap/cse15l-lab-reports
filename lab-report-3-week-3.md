@@ -78,11 +78,10 @@ ArrayExamples (reverseInPlace method)
 
 Failure-Inducing Input:
 
-@Test
-public void testReverseInPlace2() {
-    int [] input2 = {1, 2, 3};
-    ArrayExamples.reverseInPlace(input2);
-    assertArrayEquals(new int[]{3,2,1}, input2);
+@Test 
+public void testReversed2() {
+    int[] input2 = {1, 2, 3};
+    assertArrayEquals(new int[] {3, 2, 1}, ArrayExamples.reversed(input2));
 }
 
 Symptom: Incorrect output
@@ -92,17 +91,17 @@ Bug: Missing code within the for loop
 
 OG code:
 static void reverseInPlace(int[] arr) {
-    for int(i = 0; i < arr.length; i+= 1) {
-        arr[i] = arr[arr.lenth - i -1];
+    for(int i = 0; i < arr.length; i += 1) {
+        arr[i] = arr[arr.length - i - 1];
     }
 }
 
 Fixed code:
 static void reverseInPlace(int[] arr) {
-    for int(i = 0; i < arr.length/2; i+= 1) {
+    for(int i = 0; i < arr.length/2; i += 1) {
         int temp = arr[i];
-        arr[i] = arr[arr.lenth - i - 1];
-        arr[arr.length - i- 1] = temp;
+        arr[i] = arr[arr.length - i - 1];
+        arr[arr.length - i - 1] = temp;
     }
 }
 A new temp value is created in order to store one of the two values, in this case it is the value at i. The value at i is set to the value at arr.length - i - 1, and then that value is set to the temp value we stored earlier. The original code lacked this, and thus the value at i would be set to arr.length - i - 1, and the value at i would never be changed. Also, we only loop through half of the list's length in order to not re-reverse the array.
