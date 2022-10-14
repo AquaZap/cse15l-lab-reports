@@ -1,4 +1,4 @@
-Week 3 Lab Report
+Week 3 Lab Report: By Dean Bisco (PID A16798278)
 
 Part 1: SearchEngine implementation
 
@@ -72,6 +72,83 @@ Finally, if the path is not empty or does not contain "/add" then we assume it c
 
 The main method of my SearchEngine does the same thing as NumberServer. It sets a server port given the url, and starts a new server taking in the port and a new Handler as its parameters. If no port was given, it returns a proper error message.
 
-Part 2:
+Part 2: Bugs, Symptoms, Failure-Inducing Input
+
+ArrayExamples (reverseInPlace method)
+
+Failure-Inducing Input:
+
+@Test
+public void testReverseInPlace2() {
+    int [] input2 = {1, 2, 3};
+    ArrayExamples.reverseInPlace(input2);
+    assertArrayEquals(new int[]{3,2,1}, input2);
+}
+
+Symptom: Incorrect output
+Input should return {3, 2, 1}, returns {3, 2, 3}
+
+Bug: Missing code within the for loop
+
+OG code:
+static void reverseInPlace(int[] arr) {
+    for int(i = 0; i < arr.length; i+= 1) {
+        arr[i] = arr[arr.lenth - i -1];
+    }
+}
+
+Fixed code:
+static void reverseInPlace(int[] arr) {
+    for int(i = 0; i < arr.length/2; i+= 1) {
+        int temp = arr[i];
+        arr[i] = arr[arr.lenth - i - 1];
+        arr[arr.length - i- 1] = temp;
+    }
+}
+A new temp value is created in order to store one of the two values, in this case it is the value at i. The value at i is set to the value at arr.length - i - 1, and then that value is set to the temp value we stored earlier. The original code lacked this, and thus the value at i would be set to arr.length - i - 1, and the value at i would never be changed. Also, we only loop through half of the list's length in order to not re-reverse the array.
+
+ListExamples (filter method) 
+
+Failure Inducing-Input:
+
+@Test
+public void testFilter() {
+    List<String> input1 = new ArrayList<String>();
+    input1.add("longerword");
+    input1.add("short");
+
+    List<String> expected = new ArrayList<String>();
+    expected.add("longerword");
+
+    assertEquals(expected, ListExamples.filter(input1, new LongWordChecker()));
+}
+
+Symptom: Compiler Error, StringChecker LongWordChecker() does not exist and thus cannot be resolved.
+
+Bug: Missing code within ListExamples.java 
+
+OG code:
+inteface StringChecker { boolean checkString(String s); }
+
+Added code:
+class LongWordChecker implements StringChecker {
+  
+    @Override
+    public boolean checkString(String s) {
+        if(s.length() > 5) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+Because there is no class that implements this interface, trying to call one that doesn't exist will result in a compiler error. You must add a class that implements StringChecker in order to be able to call it within (in this case) the test.
+
+
+
+
+
+
 
 
