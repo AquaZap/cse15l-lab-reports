@@ -104,6 +104,7 @@ static void reverseInPlace(int[] arr) {
         arr[arr.length - i - 1] = temp;
     }
 }
+
 A new temp value is created in order to store one of the two values, in this case it is the value at i. The value at i is set to the value at arr.length - i - 1, and then that value is set to the temp value we stored earlier. The original code lacked this, and thus the value at i would be set to arr.length - i - 1, and the value at i would never be changed. Also, we only loop through half of the list's length in order to not re-reverse the array.
 
 ListExamples (filter method) 
@@ -142,6 +143,7 @@ class LongWordChecker implements StringChecker {
         }
     }
 }
+
 Because there is no class that implements this interface, trying to call one that doesn't exist will result in a compiler error. You must add a class that implements StringChecker in order to be able to call it within (in this case) the test.
 
 
