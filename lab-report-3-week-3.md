@@ -2,6 +2,7 @@ Week 3 Lab Report: By Dean Bisco (PID A16798278)
 
 Part 1: SearchEngine implementation
 
+'''
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -61,6 +62,14 @@ class SearchEngine {
         Server.start(port, new Handler());
     }
 }
+'''
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-1.png)
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-2.png)
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-3.png)
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-4.png)
 
 I modeled my simple SearchEngine after the NumberServer class we were given. Like with that class, I first made a class within SearchEngine called Handler, implementing the method found within URLHandler, HandleRequest. It takes in a url, creates an empty ArrayList of strings to store added strings, and depending on the url, it will display a different message.
 
@@ -78,25 +87,34 @@ ArrayExamples (reverseInPlace method)
 
 Failure-Inducing Input:
 
+'''
 @Test 
 public void testReversed2() {
     int[] input2 = {1, 2, 3};
     assertArrayEquals(new int[] {3, 2, 1}, ArrayExamples.reversed(input2));
 }
+'''
 
 Symptom: Incorrect output
 Input should return {3, 2, 1}, returns {3, 2, 3}
 
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-5.png)
+
 Bug: Missing code within the for loop
 
 OG code:
+
+'''
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
         arr[i] = arr[arr.length - i - 1];
     }
 }
+'''
 
 Fixed code:
+
+'''
 static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length/2; i += 1) {
         int temp = arr[i];
@@ -104,6 +122,7 @@ static void reverseInPlace(int[] arr) {
         arr[arr.length - i - 1] = temp;
     }
 }
+'''
 
 A new temp value is created in order to store one of the two values, in this case it is the value at i. The value at i is set to the value at arr.length - i - 1, and then that value is set to the temp value we stored earlier. The original code lacked this, and thus the value at i would be set to arr.length - i - 1, and the value at i would never be changed. Also, we only loop through half of the list's length in order to not re-reverse the array.
 
@@ -111,6 +130,7 @@ ListExamples (filter method)
 
 Failure Inducing-Input:
 
+'''
 @Test
 public void testFilter() {
     List<String> input1 = new ArrayList<String>();
@@ -122,15 +142,22 @@ public void testFilter() {
 
     assertEquals(expected, ListExamples.filter(input1, new LongWordChecker()));
 }
+'''
 
 Symptom: Compiler Error, StringChecker LongWordChecker() does not exist and thus cannot be resolved.
+
+![](https://aquazap.github.io/cse15l-lab-reports/lab-report-3-screenshot-6.png)
 
 Bug: Missing code within ListExamples.java 
 
 OG code:
+'''
 inteface StringChecker { boolean checkString(String s); }
+'''
 
 Added code:
+
+'''
 class LongWordChecker implements StringChecker {
   
     @Override
@@ -143,6 +170,7 @@ class LongWordChecker implements StringChecker {
         }
     }
 }
+'''
 
 Because there is no class that implements this interface, trying to call one that doesn't exist will result in a compiler error. You must add a class that implements StringChecker in order to be able to call it within (in this case) the test.
 
