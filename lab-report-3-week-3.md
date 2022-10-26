@@ -151,6 +151,7 @@ Symptom: Compiler Error, StringChecker LongWordChecker() does not exist and thus
 Bug: Missing code within ListExamples.java 
 
 OG code:
+
 '''
 inteface StringChecker { boolean checkString(String s); }
 '''
