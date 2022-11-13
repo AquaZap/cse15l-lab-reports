@@ -36,4 +36,12 @@ We're now finished with the task! Let's exit vim by first exiting insert mode wi
 
 Part 2: Local and SCP edit vs SSH and Vim edit
 
+When performing the above task via a local edit and a SCP command transfer, the entire task including running the test took about 1 minute and 30 seconds. Compare this to the edit using vim on the remote server (including testing and logging onto the remote terminal) the process was a shorter by 35 seconds, taking 55 seconds in total. 
+
+There are pros and cons to using both methods. For the first method, VS code will alert you if you have made a mistake or not. This prevents any user error. On the other hand, this method does take longer to perform with the scp command, logging onto the remote terminal, and navigating to the file's directory in order to test it. The second method requires a lot less time, especially if you have a lot of practice with using vim. However, this method does allow for more user error to occur as Vim doesn't share the same functionality of poiting out Java errors like VS code does. If you were to miss a semicolon, Vim can't point that out to you in the moment and you instead have to interpret the error message when it comes time to run the tests.
+
+I think generally I like the first method better. Despite the longer time, it ensures that I make little to no mistakes. Plus, at this moment in time I am more experienced with VS code as oppposed to Vim.
+
+In a setting where I am allowed to make little to no errors, the first method is my perferred way to go. However, if I know the exact changes I need to make and the location of said changes, then I would for sure use Vim to save some time.
+
 
