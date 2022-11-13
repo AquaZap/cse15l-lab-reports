@@ -22,7 +22,7 @@ $<up_arrow_key>i
 
 This will put you into insert mode at the curly brace at the line above the line listed in the task. To then place your cursor in the following position, type:
 
-<right_arrow_key>< enter >< backspace >< space >< space >< space >< space >
+<right_arrow_key>< enter >< backspace >< space >< space >< space >< space >  
 
 ![](https://aquazap.github.io/cse15l-lab-reports/lab-report-5-screenshot-3.png)
 
